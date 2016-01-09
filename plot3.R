@@ -27,12 +27,13 @@ subPower <- transform(subPower, dtstamp=as.POSIXct(paste(Date, Time)), "%d/%m/%Y
 png("plot3.png", width=480, height=480)
 
 # type =“n” sets up the plot and does not fill it with data
-with(subPower, plot(dtstamp, Sub_metering_1, ylab="Energy Submetering", xlab="", type = "n"))
+with(subPower, plot(dtstamp, Sub_metering_1, ylab="Energy sub metering", xlab="", type = "n"))
 # subsets of data are plotted here using different colors
 with(subPower, lines(dtstamp, Sub_metering_1, col = "black"))
 with(subPower, lines(dtstamp, Sub_metering_2, col = "red"))
 with(subPower, lines(dtstamp, Sub_metering_3, col = "blue"))
-legend("topright", cex=0.65, lty=c(1,1), lwd=c(1,1), col = c("black","red","blue"), legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"))
+legend("topright", cex=0.65, lty=c(1,1), lwd=c(1,1), col = c("black","red","blue"), 
+       legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"))
 
 ## end graphics device
 dev.off()
